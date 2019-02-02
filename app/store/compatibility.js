@@ -1,10 +1,6 @@
-/**
- * compatibility.js
- */
-
 import { AsyncStorage } from 'react-native';
 
-const storeVersion = 'EScooter:0.1';
+const storeVersion = 'GitHubUsers:0.1';
 const versionKey = 'storeVersion';
 
 export async function updateStoreCompatibility() {
@@ -13,7 +9,7 @@ export async function updateStoreCompatibility() {
     return true; // store compatible after updated
   }
   catch (error) {
-    // do nothing?
+    // do nothing currently
   }
 
   return false;
@@ -46,7 +42,7 @@ export async function checkStoreCompatibility() {
     }
   }
   catch (error) {
-    // do nothing?
+    // do nothing currently
   }
 
   // store isn't compatible

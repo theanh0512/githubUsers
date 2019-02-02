@@ -9,7 +9,6 @@ import reducers from 'app/reducers';
 // TODO: handle persistence and clearing of location breadcrumbs
 const config = {
   storage: AsyncStorage
-  //whitelist: ['auth', 'settings']
 };
 let store;
 const defaultState = {};

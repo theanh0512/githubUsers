@@ -1,25 +1,23 @@
 import { createStackNavigator } from 'react-navigation';
-import Main from 'app/features/map/components/Main';
+import Users from 'app/features/users/components/UserListScreen';
 
-const mainNavigationRouteKeys = {
-  Main: 'Main'
+const usersNavigationRouteKeys = {
+  Users: 'Users'
 };
 
 const routeConfig = {
-  [`${mainNavigationRouteKeys.Main}`]: {
-    screen: Main
+  [`${usersNavigationRouteKeys.Users}`]: {
+    screen: Users
   }
 };
 
-const mainNavigationConfig = {
-  initialRouteName: `${mainNavigationRouteKeys.Main}`,
+const usersNavigationConfig = {
+  initialRouteName: `${usersNavigationRouteKeys.Users}`,
   mode: 'card',
   headerMode: 'screen'
 };
 
-const MainNavigation = createStackNavigator(
+export const UsersNavigation = createStackNavigator(
   routeConfig,
-  mainNavigationConfig
+  usersNavigationConfig
 );
-
-module.exports = { MainNavigation };

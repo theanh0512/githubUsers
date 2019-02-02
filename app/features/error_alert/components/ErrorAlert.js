@@ -62,7 +62,7 @@ ErrorMessageContent.propTypes = {
 /**
  * Method that invokes showMessage() on
  * <ErrorAlert/> component added inside
- * DeliveryApp component
+ * GitHubUsers component
  * @param message
  */
 const showErrorAlert = message => {

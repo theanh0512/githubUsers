@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
-import { createDrawerNavigator } from 'react-navigation';
-import { mapRouteKeysToScreen, navigationConfig } from 'app/routes/NavigationRouteSetup';
 import { setTopLevelNavigator } from 'app/utils/NavigationUtil';
-
-const AppHomeDrawerNavigation = createDrawerNavigator(
-  mapRouteKeysToScreen,
-  navigationConfig
-);
+import { UsersNavigation } from 'app/routes/MainNavigationRouteSetup';
 
 export default class AppHome extends Component {
   render() {
     return (
-      <AppHomeDrawerNavigation
+      <UsersNavigation
         ref={navigatorRef => {
           setTopLevelNavigator(navigatorRef);
         }}
@@ -19,9 +13,3 @@ export default class AppHome extends Component {
     );
   }
 }
-
-//const mapStateToProps = state => ({
-//  auth: state.auth
-//});
-//
-//module.exports = connect(mapStateToProps)(AppHome);

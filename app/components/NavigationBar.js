@@ -3,8 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
 import SeparatorLine from 'app/components/SeparatorLine';
 import NavigationMenuButton from 'app/components/NavigationMenuButton';
-import HamburgerMenuSvg from 'app/resources/svg/hamburger-menu';
-import LeftArrowIcon from 'app/resources/svg/left-arrow';
+import CloseSvg from 'app/resources/svg/close';
 import Colors from 'app/common/Colors';
 import { SemiBoldText } from 'app/components/CustomTexts';
 
@@ -53,21 +52,6 @@ const handleOnLeftMenuPress = (
   }
 };
 
-const handleOnRightMenuPress = (
-  navigation,
-  menuIsRefreshButton,
-  refreshButtonEventHandler
-) => {
-  if (menuIsRefreshButton) {
-    if (!refreshButtonEventHandler) return; // Do nothing if handler not provided
-
-    refreshButtonEventHandler();
-  } else {
-    // Handle hamburger menu click
-    navigation.openDrawer();
-  }
-};
-
 const NavigationBar = ({
                          navigation, navigationTitle, showBackButton, onBackButtonPress,
                          showRefreshButton, onRefreshButtonPress, hideBottomBorder, grey
@@ -87,30 +71,14 @@ const NavigationBar = ({
         }}
         buttonImageElement={
           showBackButton ? (
-            <LeftArrowIcon style={style.leftMenuButton}/>
-          ) : (
-            <HamburgerMenuSvg style={style.leftMenuButton}/>
-          )
+            <CloseSvg style={style.leftMenuButton}/>
+          ) : null
         }
       />
       <SemiBoldText
         style={style.navigationTitle}
         fontSize={16}
         text={navigationTitle}
-      />
-      <NavigationMenuButton
-        handleMenuButtonPress={() => {
-          handleOnRightMenuPress(
-            navigation,
-            showRefreshButton,
-            onRefreshButtonPress
-          );
-        }}
-        buttonImageElement={
-          showRefreshButton ? (
-            <RefreshSvg style={style.rightMenuButton}/>
-          ) : null
-        }
       />
     </View>
     {!hideBottomBorder ? <SeparatorLine/> : null}
