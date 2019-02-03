@@ -19,7 +19,7 @@ Click `Run on iOS simulator` or install Expo app in the real device and scan the
 As demo purpose, I have not included detailed error handling (no internet, error to connect to server)
 
 ### Challenge: 
-I found it a bit difficult at first when finding the way to load more users based on the link header
+I found it a bit difficult at first when finding the way to load more users based on the `link` header. <br/>
 Since there is only 1 number after `since=`, I decided to replace all other characters with nothing 
 
 ## 5. Screenshots
