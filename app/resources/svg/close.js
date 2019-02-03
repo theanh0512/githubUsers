@@ -15,7 +15,7 @@ const CloseSvg = props => (
       />
     </Defs>
     <G fill="none" fill-rule="evenodd" transform="translate(-3 -3)">
-      <Use fill="#333132" href="#a" />
+      <Use fill="#333132" href="#a"/>
     </G>
   </Svg>
 );

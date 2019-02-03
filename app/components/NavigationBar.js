@@ -9,7 +9,7 @@ import { SemiBoldText } from 'app/components/CustomTexts';
 
 const style = StyleSheet.create({
   container: {
-    height: 64,
+    height: 84,
     backgroundColor: Colors.white
   },
   innerContainer: {
@@ -17,7 +17,6 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    marginLeft: 16,
     marginRight: 16,
     marginTop: 16
   },
@@ -31,7 +30,7 @@ const style = StyleSheet.create({
   },
   navigationTitle: {
     flex: 1,
-    color: Colors.black,
+    color: Colors.white,
     marginLeft: 16,
     marginRight: 16
   }
@@ -60,7 +59,7 @@ const NavigationBar = ({
     style={[
       style.container,
       grey
-        ? { backgroundColor: Colors.greyLight }
+        ? { backgroundColor: Colors.greyDark }
         : { backgroundColor: Colors.white }
     ]}
   >
@@ -77,7 +76,7 @@ const NavigationBar = ({
       />
       <SemiBoldText
         style={style.navigationTitle}
-        fontSize={16}
+        fontSize={20}
         text={navigationTitle}
       />
     </View>
