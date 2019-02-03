@@ -1,0 +1,3 @@
+export const SAVE_USER = 'SAVE_USER';
+export const HIDE_LOADING_USER = 'HIDE_LOADING_USER';
+export const SHOW_LOADING_USER = 'SHOW_LOADING_USER';

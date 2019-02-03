@@ -2,7 +2,7 @@ import React from 'react';
 import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native';
 import NavigationBar from 'app/components/NavigationBar';
 import { connect } from 'react-redux';
-import { getUsers } from 'app/features/users/actions/UserListAction';
+import { getUsers, setSelectedUser } from 'app/features/users/actions/UserListAction';
 import { SemiBoldText } from 'app/components/CustomTexts';
 import styles from 'app/features/users/components/styles';
 import Colors from 'app/common/Colors';
@@ -12,9 +12,19 @@ export default class UserListScreen extends React.Component {
     this.props.getUsers(0);
   }
 
+  handleShowUserDetails = item => {
+    // Set selected item for user detail screen
+    this.props.setSelectedUser(item.login);
+    // Show user details screen
+    this.props.navigation.push('UserDetailScreen');
+  };
+
   renderInnerItem = ({ item, index }) => {
     return (
-      <TouchableOpacity style={styles.itemContainer}>
+      <TouchableOpacity style={styles.itemContainer}
+                        onPress={() => {
+                          this.handleShowUserDetails(item);
+                        }}>
         <Image source={{ uri: item.avatar_url }}
                style={styles.avatar}/>
         <View style={{ marginLeft: 16 }}>
@@ -60,7 +70,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  getUsers
+  getUsers, setSelectedUser
 };
 
 module.exports = connect(

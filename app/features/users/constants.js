@@ -1,3 +1,4 @@
 export const SAVE_USERS = 'SAVE_USERS';
 export const HIDE_LOADING_USERS = 'HIDE_LOADING_USERS';
 export const SHOW_LOADING_USERS = 'SHOW_LOADING_USERS';
+export const SELECT_USER = 'SELECT_USER';

@@ -3,7 +3,8 @@ import { exceptionHandler } from 'app/common/ExceptionHandler';
 import {
   HIDE_LOADING_USERS,
   SAVE_USERS,
-  SHOW_LOADING_USERS
+  SHOW_LOADING_USERS,
+  SELECT_USER
 } from 'app/features/users/constants';
 
 const showLoadingUserList = () => ({
@@ -18,6 +19,13 @@ const saveUserList = users => ({
   type: SAVE_USERS,
   users
 });
+
+const setSelectedUser = username => async dispatch => {
+  dispatch({
+    type: SELECT_USER,
+    username
+  });
+};
 
 const getUsers = since => async (dispatch, getState) => {
   try {
@@ -34,4 +42,4 @@ const getUsers = since => async (dispatch, getState) => {
   }
 };
 
-module.exports = { getUsers };
+module.exports = { getUsers, setSelectedUser };
