@@ -10,7 +10,7 @@ export default StyleSheet.create({
   avatar: {
     height: 64,
     width: 64,
-    borderRadius: 40
+    borderRadius: 30
   },
   tag: {
     color: Colors.white,
