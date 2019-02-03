@@ -2,7 +2,7 @@ import { createStackNavigator } from 'react-navigation';
 import Users from 'app/features/users/components/UserListScreen';
 
 const usersNavigationRouteKeys = {
-  Users: 'Users'
+  Users: 'UserListScreen'
 };
 
 const routeConfig = {

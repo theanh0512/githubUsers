@@ -2,6 +2,16 @@ import { Exception } from 'app/common/ExceptionHandler';
 
 export const APIVersionV1 = 'v1';
 
+/**
+ * Helper method to form url query string from param object
+ * @param params  object containing params (key, value)
+ * @returns {string}
+ */
+const constructQueryWithParams = params =>
+  Object.keys(params)
+  .map(key => `${key}=${params[key]}`)
+  .join('&');
+
 function getHeaders(apiVersion) {
   switch (apiVersion) {
     default:
@@ -85,5 +95,6 @@ const get = async (url, apiVersion) => {
 
 module.exports = {
   APIVersionV1,
-  get
+  get,
+  constructQueryWithParams
 };
