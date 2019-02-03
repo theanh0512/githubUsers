@@ -4,7 +4,7 @@
 run `npm install` or `yarn install` 
 
 ## 2. Install Expo
-npm install -g expo-cli
+`npm install -g expo-cli`
 
 ## 3. Run app
 `npm start`<br/>
@@ -12,16 +12,16 @@ Click `Run on iOS simulator` or install Expo app in the real device and scan the
 
 ## 4. Project details
 Application is written with:
-1. Redux - a predictable state container for JavaScript app
-2. redux-thunk - a middleware for basic Redux side effects logic
-3. react-navigation - a routing and navigation library for React Native apps
+1. `Redux` - a predictable state container for JavaScript app
+2. `redux-thunk` - a middleware for basic Redux side effects logic
+3. `react-navigation` - a routing and navigation library for React Native apps
 
 As demo purpose, I have not included detailed error handling (no internet, error to connect to server)
 
 ## 4. Screenshots
 <p align="center">
-  <img src="/screenshots/ss1.png" width="350" alt="accessibility text">
-  <img src="/screenshots/ss2.png" width="350" alt="accessibility text">
+  <img src="/screenshots/ss1.jpg" width="350" alt="accessibility text">
+  <img src="/screenshots/ss2.jpg" width="350" alt="accessibility text">
 </p>
 
 ## 5. Built application on Expo
