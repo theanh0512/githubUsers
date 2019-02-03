@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
   "expoServerPort": 19000,
-  "packagerPort": null,
-  "packagerPid": null,
+  "packagerPort": 19001,
+  "packagerPid": 3432,
   "expoServerNgrokUrl": "https://dr-9vm.theanh0512.githubusers.exp.direct",
   "packagerNgrokUrl": "https://packager.dr-9vm.theanh0512.githubusers.exp.direct",
-  "ngrokPid": 17728
+  "ngrokPid": 8632
 }

@@ -6,6 +6,7 @@ import { getUsers, setSelectedUser } from 'app/features/users/actions/UserListAc
 import { SemiBoldText } from 'app/components/CustomTexts';
 import styles from 'app/features/users/components/styles';
 import Colors from 'app/common/Colors';
+import { RegularText } from '../../../components/CustomTexts';
 
 export default class UserListScreen extends React.Component {
   componentDidMount() {
@@ -37,6 +38,16 @@ export default class UserListScreen extends React.Component {
     );
   };
 
+  renderEmptyContainer = () => {
+    return (
+      <View style={styles.noDataView}>
+        <RegularText fontSize={16}
+                     text="No users have been loaded"
+                     style={{ color: Colors.black }}/>
+      </View>
+    );
+  };
+
   render() {
     const { users } = this.props;
 
@@ -48,6 +59,7 @@ export default class UserListScreen extends React.Component {
           data={users}
           renderItem={this.renderInnerItem}
           keyExtractor={(itm, idx) => idx.toString()}
+          ListEmptyComponent={this.renderEmptyContainer}
         />
       </View>
     );

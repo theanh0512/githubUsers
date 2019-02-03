@@ -24,6 +24,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "React Native GitHub user list application with Redux, redux-thunk",
+    "githubUrl": "https://github.com/theanh0512/githubUsers"
   }
 }

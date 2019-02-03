@@ -22,5 +22,9 @@ export default StyleSheet.create({
     margin: 16,
     color: Colors.grey
   },
-  flatList: { marginBottom: 64 }
+  flatList: { marginBottom: 64 },
+  noDataView: {
+    alignItems: 'center',
+    marginTop: 160
+  }
 });
