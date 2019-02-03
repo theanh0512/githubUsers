@@ -16,7 +16,8 @@ export default StyleSheet.create({
     color: Colors.white,
     backgroundColor: Colors.blueTag,
     paddingHorizontal: 8,
-    borderRadius: 15
+    borderRadius: 10,
+    overflow: 'hidden'
   },
   header: {
     margin: 16,
