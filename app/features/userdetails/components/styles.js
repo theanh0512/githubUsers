@@ -8,9 +8,10 @@ export default StyleSheet.create({
     alignItems: 'center'
   },
   avatar: {
-    height: 64,
-    width: 64,
-    borderRadius: 40
+    height: 128,
+    width: 128,
+    borderRadius: 65,
+    alignSelf: 'center'
   },
   tag: {
     color: Colors.white,
@@ -18,9 +19,21 @@ export default StyleSheet.create({
     paddingHorizontal: 8,
     borderRadius: 15
   },
-  header: {
+  name: {
     margin: 16,
+    alignSelf: 'center',
     color: Colors.grey
+  },
+  bio: {
+    alignSelf: 'center',
+    color: Colors.black,
+    marginHorizontal: 16
+  },
+  detail: {
+    color: Colors.black
+  },
+  link: {
+    color: Colors.blueTag
   },
   flatList: { marginBottom: 64 }
 });

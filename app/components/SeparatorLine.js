@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import PropType from 'prop-types';
 import Colors from 'app/common/Colors';
 
-const SeparatorLine = ({ style, lineColor = Colors.grey, lineWidth = StyleSheet.hairlineWidth }) => (
+const SeparatorLine = ({ style, lineColor = Colors.greyBorder, lineWidth = StyleSheet.hairlineWidth }) => (
   <View
     style={[
       style,

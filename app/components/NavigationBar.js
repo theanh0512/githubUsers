@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
+import { MaterialIcons } from '@expo/vector-icons';
 import SeparatorLine from 'app/components/SeparatorLine';
 import NavigationMenuButton from 'app/components/NavigationMenuButton';
-import CloseSvg from 'app/resources/svg/close';
 import Colors from 'app/common/Colors';
 import { SemiBoldText } from 'app/components/CustomTexts';
 
@@ -21,8 +21,7 @@ const style = StyleSheet.create({
     marginTop: 16
   },
   leftMenuButton: {
-    height: 24,
-    width: 24
+    marginLeft: 16
   },
   rightMenuButton: {
     height: 24,
@@ -70,7 +69,9 @@ const NavigationBar = ({
         }}
         buttonImageElement={
           showBackButton ? (
-            <CloseSvg style={style.leftMenuButton}/>
+            <View style={style.leftMenuButton}>
+              <MaterialIcons name="close" size={24} color={Colors.grey}/>
+            </View>
           ) : null
         }
       />

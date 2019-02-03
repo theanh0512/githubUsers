@@ -31,7 +31,8 @@ module.exports = (state = defaultState, action) => {
     case SELECT_USER: {
       return {
         ...state,
-        username: action.username
+        username: action.username,
+        userDetail: undefined
       };
     }
     default:

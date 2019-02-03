@@ -29,8 +29,8 @@ export default class UserListScreen extends React.Component {
                style={styles.avatar}/>
         <View style={{ marginLeft: 16 }}>
           <SemiBoldText fontSize={16} text={item.login}/>
-          {item.type !== 'User' && <SemiBoldText fontSize={16}
-                                                 text={item.type}
+          {item.type !== 'User' && <SemiBoldText fontSize={14}
+                                                 text={item.type.toUpperCase()}
                                                  style={styles.tag}/>}
         </View>
       </TouchableOpacity>
@@ -54,15 +54,15 @@ export default class UserListScreen extends React.Component {
   }
 }
 
-UserListScreen.navigationOptions = {
-  header: ({ navigation }) => (
+UserListScreen.navigationOptions = ({ navigation }) => ({
+  header: () => (
     <NavigationBar
       navigation={navigation}
       navigationTitle={"GitHub Users"}
       grey
     />
   )
-};
+});
 
 const mapStateToProps = state => ({
   loadingUserList: state.userReducer.loadingUserList,
