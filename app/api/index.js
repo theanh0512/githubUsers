@@ -15,5 +15,5 @@ export const usersAPI = async since => {
 export const userDetailAPI = async username => {
   const url = `https://api.github.com/users/${username}`;
   const response = await get(url, APIVersionV1);
-  return response;
+  return response.json;
 };

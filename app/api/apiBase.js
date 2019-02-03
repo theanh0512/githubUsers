@@ -31,7 +31,8 @@ const handleResponse = async (url, response) => {
   switch (response.status) {
     case 200:
       try {
-        return response.json();
+        const json = await response.json();
+        return { json, headers: response.headers };
       }
       catch (error) {
         // Log error in parsing json response

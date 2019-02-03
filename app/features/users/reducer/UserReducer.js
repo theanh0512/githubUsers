@@ -5,20 +5,34 @@ import {
 } from 'app/features/users/constants';
 
 const defaultState = {
-  users: [],
-  loadingUserList: false
+  users: undefined,
+  loadingUserList: false,
+  link: undefined
 };
 
 module.exports = (state = defaultState, action) => {
   switch (action.type) {
     case SAVE_USERS: {
-      return { ...state, users: action.users }
-    }
-    case SHOW_LOADING_USERS: {
       return {
         ...state,
-        loadingUserList: true
-      };
+        users: action.users,
+        link: action.link
+      }
+    }
+    case SHOW_LOADING_USERS: {
+      if (action.since === 0) {
+        return {
+          ...state,
+          loadingUserList: true,
+          users: undefined
+        };
+      }
+      else {
+        return {
+          ...state,
+          loadingUserList: true
+        };
+      }
     }
     case HIDE_LOADING_USERS: {
       return {

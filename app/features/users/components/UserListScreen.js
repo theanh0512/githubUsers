@@ -1,12 +1,11 @@
 import React from 'react';
-import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, FlatList, Image, TouchableOpacity, View } from 'react-native';
 import NavigationBar from 'app/components/NavigationBar';
 import { connect } from 'react-redux';
 import { getUsers, setSelectedUser } from 'app/features/users/actions/UserListAction';
-import { SemiBoldText } from 'app/components/CustomTexts';
+import { SemiBoldText, RegularText } from 'app/components/CustomTexts';
 import styles from 'app/features/users/components/styles';
 import Colors from 'app/common/Colors';
-import { RegularText } from '../../../components/CustomTexts';
 
 export default class UserListScreen extends React.Component {
   componentDidMount() {
@@ -48,18 +47,29 @@ export default class UserListScreen extends React.Component {
     );
   };
 
+  onEndReached = () => {
+    const { loadingUserList, link } = this.props;
+    if (loadingUserList === false && link !== undefined) {
+      this.props.getUsers(link.replace(/\D/g, ''));
+    }
+  };
+
   render() {
-    const { users } = this.props;
+    const { users, loadingUserList } = this.props;
 
     return (
       <View style={{ backgroundColor: Colors.white }}>
-        <SemiBoldText fontSize={16} text="Users" style={styles.header}/>
+        <View style={{ flexDirection: 'row' }}>
+          <SemiBoldText fontSize={16} text="Users" style={styles.header}/>
+          {loadingUserList && <ActivityIndicator/>}
+        </View>
         <FlatList
           style={styles.flatList}
           data={users}
           renderItem={this.renderInnerItem}
           keyExtractor={(itm, idx) => idx.toString()}
           ListEmptyComponent={this.renderEmptyContainer}
+          onEndReached={this.onEndReached}
         />
       </View>
     );
@@ -78,7 +88,8 @@ UserListScreen.navigationOptions = ({ navigation }) => ({
 
 const mapStateToProps = state => ({
   loadingUserList: state.userReducer.loadingUserList,
-  users: state.userReducer.users
+  users: state.userReducer.users,
+  link: state.userReducer.link
 });
 
 const mapDispatchToProps = {

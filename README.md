@@ -20,8 +20,8 @@ As demo purpose, I have not included detailed error handling (no internet, error
 
 ## 4. Screenshots
 <p align="center">
-  <img src="/screenshots/ss1.jpg" width="350" alt="accessibility text">
   <img src="/screenshots/ss2.jpg" width="350" alt="accessibility text">
+  <img src="/screenshots/ss1.jpg" width="350" alt="accessibility text">
 </p>
 
 ## 5. Built application on Expo
